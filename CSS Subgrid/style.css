@@ -110,3 +110,13 @@ footer {
     color: var(--luxury-background);
   }
 }
+
+
+/* subgrid */
+article {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 4;
+}
+
+/* Optional Code */
