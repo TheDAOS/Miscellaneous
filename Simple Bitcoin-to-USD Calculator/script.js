@@ -47,4 +47,12 @@ document.addEventListener("DOMContentLoaded", async () => {
         )} USD</b> worth of Bitcoin.`;
         // Round it to the nearest 2 decimals and display it
     };
+
+    if (bitcoinAmount) {
+        bitcoinAmountInput.value = bitcoinAmount;
+        // Set the input's value to bitcoinAmount
+    
+        calculateUSDAmount();
+        // Calculate and update the front-end
+    }
   });
