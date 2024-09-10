@@ -29,4 +29,22 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   
     console.log(bitcoinPrice);
+
+    // continue after console.log(bitcoinPrice);
+
+    let bitcoinAmount = localStorage.getItem("bitcoinAmount");
+
+    const calculateUSDAmount = () => {
+        bitcoinAmount = bitcoinAmountInput.value || 0;
+        // bitcoinAmount will be reassigned to whatever is in the input on the front end, otherwise it's default value will be zero
+      
+        const usdAmount = bitcoinAmount * bitcoinPrice;
+        // Say you have 2 Bitcoins and the price is 60000.
+        // 2 * 60000 = 120000
+      
+        usdAmountElement.innerHTML = `<b>$${usdAmount.toFixed(
+          2
+        )} USD</b> worth of Bitcoin.`;
+        // Round it to the nearest 2 decimals and display it
+    };
   });
