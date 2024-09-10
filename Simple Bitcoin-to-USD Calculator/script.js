@@ -55,4 +55,12 @@ document.addEventListener("DOMContentLoaded", async () => {
         calculateUSDAmount();
         // Calculate and update the front-end
     }
+    
+    calculateBtn.addEventListener("click", () => {
+        localStorage.setItem("bitcoinAmount", bitcoinAmountInput.value);
+        // Save the input value to localStorage
+    
+        calculateUSDAmount();
+        // Calculate and update the front-end
+      });
   });
