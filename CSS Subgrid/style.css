@@ -120,3 +120,18 @@ article {
 }
 
 /* Optional Code */
+img {
+    grid-row: 1/2;
+}
+
+h3 {
+    grid-row: 2/3;
+}
+
+p {
+    grid-row: 3/4;
+}
+
+button {
+    grid-row: 4/5;
+}
