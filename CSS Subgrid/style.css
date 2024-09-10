@@ -75,4 +75,38 @@ footer {
         border: 1px solid var(--font-color);
       }
   }
-}  
+}
+
+/* All */
+.suvs,
+.sedans,
+.luxury {
+  padding: 3rem;
+  h3 {
+    font-size: var(--heading-font-size);
+    text-transform: uppercase;
+  }
+}
+/* Sedans */
+.sedans {
+  background-color: var(--sedans-background);
+  border-radius: 10px 0 0 10px;
+  button {
+    color: var(--sedans-background);
+  }
+}
+/* SUV */
+.suvs {
+  background-color: var(--suv-background);
+  button {
+    color: var(--suv-background);
+  }
+}
+/* Luxury */
+.luxury {
+  background-color: var(--luxury-background);
+  border-radius: 0 10px 10px 0;
+  button {
+    color: var(--luxury-background);
+  }
+}
