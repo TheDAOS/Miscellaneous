@@ -1,6 +1,13 @@
 .loading {
+    color: transparent;
     background: #eceff1;
 }
+
+li {
+    margin-bottom: .5em;
+}
+
+
 
 * {
     box-sizing: border-box;
