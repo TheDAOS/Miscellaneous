@@ -1,0 +1,35 @@
+.loading {
+    color: transparent;
+    background: linear-gradient(100deg, #eceff1 30%, #f6f7f8 50%, #eceff1 70%);
+    background-size: 400%;
+    animation: loading 1.2s ease-in-out infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+li {
+    margin-bottom: .5em;
+}
+
+* {
+    box-sizing: border-box;
+}
+  
+body {
+    font-family: sans-serif;
+    padding: 0;
+    margin: 0;
+}
+  
+main {
+    max-width: 50em;
+    padding: 0 1em;
+    margin: 0 auto;
+}
