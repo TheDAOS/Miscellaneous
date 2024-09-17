@@ -81,29 +81,54 @@ def main():
         # "https://youtu.be/WgTMeICssXY?si=9qGjjQGKb9lvwyF2", # 40 + 2
 
         # part 3
-        "https://youtu.be/MoN9ql6Yymw?si=svEY3EMyyy9N856q",
-        "https://youtu.be/syFZfO_wfMQ?si=bSEF3Ek0PZHyRQln",
-        "https://youtu.be/H5v3kku4y6Q?si=fCXzHl5L0hPWDfxg",
-        "https://youtu.be/LYJDRjEW_V4?si=FeuqCnT6TIhXWB0J",
-        "https://youtu.be/J7ck984Qhso?si=rxfHONN6_ZPo4ya0",
+        # "https://youtu.be/MoN9ql6Yymw?si=svEY3EMyyy9N856q",
+        # "https://youtu.be/syFZfO_wfMQ?si=bSEF3Ek0PZHyRQln",
+        # "https://youtu.be/H5v3kku4y6Q?si=fCXzHl5L0hPWDfxg",
+        # "https://youtu.be/LYJDRjEW_V4?si=FeuqCnT6TIhXWB0J",
+        # "https://youtu.be/J7ck984Qhso?si=rxfHONN6_ZPo4ya0",
 
-        "https://youtu.be/_XBVWlI8TsQ?si=HnTYvsBRa7IxkJqN",
-        "https://youtu.be/7c3-Gei5j4w?si=KLfIYmZlaDMZ6fy_",
-        "https://youtu.be/N2cPyl83tkQ?si=81xalTruDvr6NeXT",
-        "https://youtu.be/_Aketl4J03Y?si=Yujvg_y1_Zr8eP-Y",
-        "https://youtu.be/lX3vT_Gm_HE?si=vXTFDHs9bRTEs80n",
+        # "https://youtu.be/_XBVWlI8TsQ?si=HnTYvsBRa7IxkJqN",
+        # "https://youtu.be/7c3-Gei5j4w?si=KLfIYmZlaDMZ6fy_",
+        # "https://youtu.be/N2cPyl83tkQ?si=81xalTruDvr6NeXT",
+        # "https://youtu.be/_Aketl4J03Y?si=Yujvg_y1_Zr8eP-Y",
+        # "https://youtu.be/lX3vT_Gm_HE?si=vXTFDHs9bRTEs80n",
 
-        "https://youtu.be/nqUN530Rgtw?si=jsQSXo01GBik56Qx",
-        "https://youtu.be/7xQCCw5sbdY?si=KZIhBiWmztKsu1Iu",
-        "https://youtu.be/BhUthi9HGjg?si=hVe8lucYCUslOQWa",
-        "https://youtu.be/Dll6VJ2C7wo?si=imIi1NXLuyTDTyEZ",
-        "https://youtu.be/oMKYLxwhAo8?si=GNUO82bq_28BgZom",
+        # "https://youtu.be/nqUN530Rgtw?si=jsQSXo01GBik56Qx",
+        # "https://youtu.be/7xQCCw5sbdY?si=KZIhBiWmztKsu1Iu",
+        # "https://youtu.be/BhUthi9HGjg?si=hVe8lucYCUslOQWa",
+        # "https://youtu.be/Dll6VJ2C7wo?si=imIi1NXLuyTDTyEZ",
+        # "https://youtu.be/oMKYLxwhAo8?si=GNUO82bq_28BgZom",
 
-        "https://youtu.be/XR7Ev14vUh8?si=gbBOkyzR1IUkNOQX",
-        "https://youtu.be/9u8a6G0y1fI?si=Esh2bxNdgrQ4cbBo",
-        "https://youtu.be/_WCD3Z9UmJ4?si=i-Lf3h0x-SPe_Azo",
-        "https://youtu.be/7yW_uJOpxww?si=qwEjYfHKDeiTEhsH",
-        "https://youtu.be/urecgzR3P-0?si=qvG3cdinlZJKXzP5", # 60 + 2
+        # "https://youtu.be/XR7Ev14vUh8?si=gbBOkyzR1IUkNOQX",
+        # "https://youtu.be/9u8a6G0y1fI?si=Esh2bxNdgrQ4cbBo",
+        # "https://youtu.be/_WCD3Z9UmJ4?si=i-Lf3h0x-SPe_Azo",
+        # "https://youtu.be/7yW_uJOpxww?si=qwEjYfHKDeiTEhsH",
+        # "https://youtu.be/urecgzR3P-0?si=qvG3cdinlZJKXzP5", # 60 + 2
+
+        # part 4
+        "",
+        "",
+        "",
+        "",
+        "",
+
+        "",
+        "",
+        "",
+        "",
+        "",
+
+        "",
+        "",
+        "",
+        "",
+        "",
+
+        "",
+        "",
+        "",
+        "",
+        "",
     ]
     
     download_folder = 'audio_files'  # Specify the folder where files will be saved
