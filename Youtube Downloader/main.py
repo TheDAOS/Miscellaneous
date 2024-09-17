@@ -131,29 +131,29 @@ def main():
         # "https://youtu.be/4POvT6O0ygE?si=Cdl9PKSi8KXEkVJk", # 80 + 2 - 1 (Dupicate)
 
         # part 5
-        "",
-        "",
-        "",
-        "",
-        "",
+        "https://youtu.be/aDFEb_W2t1Y?si=HlRGnF5rjTRTmgSV",
+        "https://youtu.be/KsF8EAkvwSs?si=u9aexe0utQBRRPbf",
+        "https://youtu.be/o-Gmhk90JOE?si=egKWUcn6m-7CBXe9",
+        "https://youtu.be/8Q5d0P6x61k?si=i2EQUiji7bAuXzPu",
+        "https://youtu.be/nKEVIuya2kY?si=V5NliIKGB3bwywQ0",
 
-        "",
-        "",
-        "",
-        "",
-        "",
+        "https://youtu.be/FAn2i7gu32w?si=OkcwzvpPd2K8swh2",
+        "https://youtu.be/mQiiw7uRngk?si=kNw0_RlZ_1mHbK2s",
+        "https://youtu.be/Irw8llgSC3s?si=Ln-bw24HbAFOMLq-",
+        "https://youtu.be/SAcpESN_Fk4?si=od8zeboZUAc3grHN",
+        "https://youtu.be/gvyUuxdRdR4?si=yNCM6Umfp8Ty1eFO",
 
-        "",
-        "",
-        "",
-        "",
-        "",
+        "https://youtu.be/wO5j3lv_9Fs?si=iXya4N1HnwXx3DVT",
+        "https://youtu.be/Njq4A5DAqRw?si=cR0lpkuS3lqRKSl-",
+        "https://youtu.be/GYFDRoJtfGM?si=MVfRZjwHyixEN-hh",
+        "https://youtu.be/ZDjpGhiJtio?si=co2iUDedak9BLIiN",
+        "https://youtu.be/MsoXD3F95pM?si=L-cO5SwMjsk2PqlD",
 
-        "",
-        "",
-        "",
-        "",
-        "",
+        "https://youtu.be/YQFEBNqOz7c?si=ZViH10XDiyNJLrEY",
+        "https://youtu.be/V7LwfY5U5WI?si=4u3HQ-7g97ienkVK",
+        "https://youtu.be/9JDSGhhiOwI?si=pWMe8iG-1JzhJU78",
+        "https://youtu.be/vKDsAB1ccn0?si=fq-p7abgjoe2ww6Y",
+        "https://youtu.be/atVof3pjT-I?si=bJOVFI4rV6wP7ADW", # 100 + 2 - 1 (Dupicate)
     ]
     
     download_folder = 'audio_files'  # Specify the folder where files will be saved
