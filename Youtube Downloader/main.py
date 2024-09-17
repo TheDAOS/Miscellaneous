@@ -55,17 +55,17 @@ def main():
         # "https://youtu.be/8olIVQpia3A?si=prIQPMzeOsnIBHvX", # Don
 
         # part 2
-        "",
-        "",
-        "",
-        "",
-        "",
+        "https://youtu.be/cgmhimjsczk?si=6pbIHFjlEUA1Xyfy",
+        "https://youtu.be/w8LcxY43N5Y?si=jbUoBO2sMqSBm_66",
+        "https://youtu.be/DMH-GARKr1U?si=JruxQTWmIiKqP8oL",
+        "https://youtu.be/a9Hxkc9YxGE?si=ll35JGLABCykCwmr",
+        "https://youtu.be/DAYszemgPxc?si=Ts49HjAyXIp_98e5",
 
-        "",
-        "",
-        "",
-        "",
-        "",
+        "https://youtu.be/Mv3SZDP7QUo?si=sPlDk3GDxoljtIpe",
+        "https://youtu.be/8v-TWxPWIWc?si=xnU3rOPfmRoOEDOZ",
+        "https://youtu.be/zFdi834FiZ4?si=ythqzH6KCSegG444",
+        "https://youtu.be/MJyKN-8UncM?si=VNoJ5MZH8gPgjQKd",
+        "https://youtu.be/9-AKLAfpjrI?si=V58aAtUN7QarkWHk",
 
         "",
         "",
