@@ -38,11 +38,11 @@ def main():
         "https://youtu.be/xitd9mEZIHk?si=4N3560NHk9ikko3G",
         "https://youtu.be/xfMN4SpIxIA?si=r84iLuye7rI6Lgt2",
         
-        "",
-        "",
-        "",
-        "",
-        "",
+        "https://youtu.be/bSAlE_WgHxY?si=g5QJvNNbsB6kFd-d",
+        "https://youtu.be/YxWlaYCA8MU?si=15sPvTdWYeQvSw6Z",
+        "https://youtu.be/zBlklssMFEo?si=B6OrwHEf2nqs6sTC",
+        "https://youtu.be/VOLKJJvfAbg?si=iqsf5q6hnbrADnVm",
+        "https://youtu.be/_iqHUSQ6eng?si=OpWKiIXEubuO1P1t",
 
         "",
         "",
