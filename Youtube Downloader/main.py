@@ -1,8 +1,12 @@
-# import youtube_dl # client to many multimedia portalss
-import yt_dlp as youtube_dl  # Replace youtube_dl with yt_dlp
+import yt_dlp as youtube_dl
+import os
 
-# downloads yt_url to the same directory from which the script runs
-def download_audio(yt_url):
+def download_audio(yt_url, download_folder):
+    # Ensure the download folder exists
+    if not os.path.exists(download_folder):
+        os.makedirs(download_folder)
+    
+    # Set up options for yt_dlp
     ydl_opts = {
         'format': 'bestaudio/best',
         'postprocessors': [{
@@ -10,9 +14,8 @@ def download_audio(yt_url):
             'preferredcodec': 'mp3',
             'preferredquality': '192',
         }],
+        'outtmpl': os.path.join(download_folder, '%(title)s.%(ext)s'),  # Template for output file path
     }
-    # with youtube_dl.YoutubeDL(ydl_opts) as ydl:
-    #     ydl.download([yt_url])
 
     try:
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
@@ -25,8 +28,10 @@ def main():
     yt_urls = [
         "https://www.youtube.com/watch?v=8OAPLk20epo",
     ]
+    
+    download_folder = 'audio_files'  # Specify the folder where files will be saved
 
     for url in yt_urls:
-        download_audio(url)
+        download_audio(url, download_folder)
 
 main()
