@@ -48,12 +48,12 @@ def main():
         # "https://youtu.be/XgdY_s1LsZc?si=ky6ZD7Wqv1y_a6aY",
         # "https://youtu.be/gvyUuxdRdR4?si=zZ1pqatQXYvXqN42",
         # "https://youtu.be/V7LwfY5U5WI?si=S_5VJMZAMYOTf8fX",
-        # "https://youtu.be/vgm1u2gPxzw?si=rsoCePZDZnT9oW0I",
+        # "https://youtu.be/vgm1u2gPxzw?si=rsoCePZDZnT9oW0I", # 20
 
-        # "https://youtu.be/ilNt2bikxDI?si=TltlZgfmT9531isg",
-        # "https://youtu.be/8olIVQpia3A?si=prIQPMzeOsnIBHvX",
+        # "https://youtu.be/ilNt2bikxDI?si=TltlZgfmT9531isg", # Don
+        # "https://youtu.be/8olIVQpia3A?si=prIQPMzeOsnIBHvX", # Don
 
-        
+
 
     ]
     
