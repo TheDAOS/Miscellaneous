@@ -26,32 +26,34 @@ def download_audio(yt_url, download_folder):
 
 def main():
     yt_urls = [
-        "https://youtu.be/fdubeMFwuGs?si=Tl5B2mAPWRilTGAv",
-        "https://youtu.be/A66TYFdz8YA?si=uRq-vaLFf9ZqWmRM",
-        "https://youtu.be/6mr4cYJ7yew?si=CWpisIMJ_aUfQW2d",
-        "https://youtu.be/5Eqb_-j3FDA?si=kXCVaV3FTFqE01A1",
-        "https://youtu.be/4tYktXxNspo?si=aNP2QVDbl-FrMcwO",
+        # "https://youtu.be/fdubeMFwuGs?si=Tl5B2mAPWRilTGAv",
+        # "https://youtu.be/A66TYFdz8YA?si=uRq-vaLFf9ZqWmRM",
+        # "https://youtu.be/6mr4cYJ7yew?si=CWpisIMJ_aUfQW2d",
+        # "https://youtu.be/5Eqb_-j3FDA?si=kXCVaV3FTFqE01A1",
+        # "https://youtu.be/4tYktXxNspo?si=aNP2QVDbl-FrMcwO",
 
-        "https://youtu.be/ofTxceS4wLI?si=KDI7DKx80ZAXC7H6",
-        "https://youtu.be/9JDSGhhiOwI?si=EkXXCMO_59wuiUrq",
-        "https://youtu.be/vr8RaNuWjWc?si=b366ediLX-l9ms3P",
-        "https://youtu.be/xitd9mEZIHk?si=4N3560NHk9ikko3G",
-        "https://youtu.be/xfMN4SpIxIA?si=r84iLuye7rI6Lgt2",
+        # "https://youtu.be/ofTxceS4wLI?si=KDI7DKx80ZAXC7H6",
+        # "https://youtu.be/9JDSGhhiOwI?si=EkXXCMO_59wuiUrq",
+        # "https://youtu.be/vr8RaNuWjWc?si=b366ediLX-l9ms3P",
+        # "https://youtu.be/xitd9mEZIHk?si=4N3560NHk9ikko3G",
+        # "https://youtu.be/xfMN4SpIxIA?si=r84iLuye7rI6Lgt2",
         
-        "https://youtu.be/bSAlE_WgHxY?si=g5QJvNNbsB6kFd-d",
-        "https://youtu.be/YxWlaYCA8MU?si=15sPvTdWYeQvSw6Z",
-        "https://youtu.be/zBlklssMFEo?si=B6OrwHEf2nqs6sTC",
-        "https://youtu.be/VOLKJJvfAbg?si=iqsf5q6hnbrADnVm",
-        "https://youtu.be/_iqHUSQ6eng?si=OpWKiIXEubuO1P1t",
+        # "https://youtu.be/bSAlE_WgHxY?si=g5QJvNNbsB6kFd-d",
+        # "https://youtu.be/YxWlaYCA8MU?si=15sPvTdWYeQvSw6Z",
+        # "https://youtu.be/zBlklssMFEo?si=B6OrwHEf2nqs6sTC",
+        # "https://youtu.be/VOLKJJvfAbg?si=iqsf5q6hnbrADnVm",
+        # "https://youtu.be/_iqHUSQ6eng?si=OpWKiIXEubuO1P1t",
 
-        "https://youtu.be/qoq8B8ThgEM?si=3FbTzlVG9sNocDy4",
-        "https://youtu.be/XgdY_s1LsZc?si=ky6ZD7Wqv1y_a6aY",
-        "https://youtu.be/gvyUuxdRdR4?si=zZ1pqatQXYvXqN42",
-        "https://youtu.be/V7LwfY5U5WI?si=S_5VJMZAMYOTf8fX",
-        "https://youtu.be/vgm1u2gPxzw?si=rsoCePZDZnT9oW0I",
+        # "https://youtu.be/qoq8B8ThgEM?si=3FbTzlVG9sNocDy4",
+        # "https://youtu.be/XgdY_s1LsZc?si=ky6ZD7Wqv1y_a6aY",
+        # "https://youtu.be/gvyUuxdRdR4?si=zZ1pqatQXYvXqN42",
+        # "https://youtu.be/V7LwfY5U5WI?si=S_5VJMZAMYOTf8fX",
+        # "https://youtu.be/vgm1u2gPxzw?si=rsoCePZDZnT9oW0I",
 
-        "https://youtu.be/ilNt2bikxDI?si=TltlZgfmT9531isg",
-        "https://youtu.be/8olIVQpia3A?si=prIQPMzeOsnIBHvX",
+        # "https://youtu.be/ilNt2bikxDI?si=TltlZgfmT9531isg",
+        # "https://youtu.be/8olIVQpia3A?si=prIQPMzeOsnIBHvX",
+
+        
 
     ]
     
