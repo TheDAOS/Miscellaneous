@@ -11,11 +11,22 @@ def download_audio(yt_url):
             'preferredquality': '192',
         }],
     }
-    with youtube_dl.YoutubeDL(ydl_opts) as ydl:
-        ydl.download([yt_url])
+    # with youtube_dl.YoutubeDL(ydl_opts) as ydl:
+    #     ydl.download([yt_url])
+
+    try:
+        with youtube_dl.YoutubeDL(ydl_opts) as ydl:
+            ydl.download([yt_url])
+        print(f"Successfully downloaded: {yt_url}")
+    except Exception as e:
+        print(f"Failed to download {yt_url}. Error: {e}")
 
 def main():
-    yt_url = "https://www.youtube.com/watch?v=8OAPLk20epo"
-    download_audio(yt_url)
+    yt_urls = [
+        "https://www.youtube.com/watch?v=8OAPLk20epo",
+    ]
+
+    for url in yt_urls:
+        download_audio(url)
 
 main()
