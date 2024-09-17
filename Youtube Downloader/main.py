@@ -106,11 +106,11 @@ def main():
         # "https://youtu.be/urecgzR3P-0?si=qvG3cdinlZJKXzP5", # 60 + 2
 
         # part 4
-        "",
-        "",
-        "",
-        "",
-        "",
+        "https://youtu.be/Kbj2Zss-5GY?si=PsJh-BJFeOxuDNBP",
+        "https://youtu.be/fGqdIPer-ms?si=F6CEn0eZXhooJyIP",
+        "https://youtu.be/ptJVWT6Oco4?si=eaF6dgbwloVmVPge",
+        "https://youtu.be/uPD0QOGTmMI?si=hpDpe14E8hob8v13",
+        "https://youtu.be/RhU9MZ98jxo?si=ZhqAeZvvMp0aTYmi",
 
         "",
         "",
