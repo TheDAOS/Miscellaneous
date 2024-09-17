@@ -109,14 +109,14 @@ def main():
         "https://youtu.be/Kbj2Zss-5GY?si=PsJh-BJFeOxuDNBP",
         "https://youtu.be/fGqdIPer-ms?si=F6CEn0eZXhooJyIP",
         "https://youtu.be/ptJVWT6Oco4?si=eaF6dgbwloVmVPge",
+        "https://youtu.be/34Na4j8AVgA?si=dXGjee5Xm9cG75BM",
         "https://youtu.be/uPD0QOGTmMI?si=hpDpe14E8hob8v13",
+        
         "https://youtu.be/RhU9MZ98jxo?si=ZhqAeZvvMp0aTYmi",
-
-        "",
-        "",
-        "",
-        "",
-        "",
+        "https://youtu.be/4NRXx6U8ABQ?si=l5ETh8M5Cj-utRKO",
+        "https://youtu.be/YQ-qToZUybM?si=M6K8mzX1wvkBiP8x",
+        "https://youtu.be/UuOQ6_MUax0?si=L7mPPH4jL7WWp0Rl",
+        "https://youtu.be/UbMgcdmYC70?si=59CgMnkkThNv55ai",
 
         "",
         "",
