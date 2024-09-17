@@ -93,17 +93,17 @@ def main():
         "https://youtu.be/_Aketl4J03Y?si=Yujvg_y1_Zr8eP-Y",
         "https://youtu.be/lX3vT_Gm_HE?si=vXTFDHs9bRTEs80n",
 
-        "",
-        "",
-        "",
-        "",
-        "",
+        "https://youtu.be/nqUN530Rgtw?si=jsQSXo01GBik56Qx",
+        "https://youtu.be/7xQCCw5sbdY?si=KZIhBiWmztKsu1Iu",
+        "https://youtu.be/BhUthi9HGjg?si=hVe8lucYCUslOQWa",
+        "https://youtu.be/Dll6VJ2C7wo?si=imIi1NXLuyTDTyEZ",
+        "https://youtu.be/oMKYLxwhAo8?si=GNUO82bq_28BgZom",
 
-        "",
-        "",
-        "",
-        "",
-        "",
+        "https://youtu.be/XR7Ev14vUh8?si=gbBOkyzR1IUkNOQX",
+        "https://youtu.be/9u8a6G0y1fI?si=Esh2bxNdgrQ4cbBo",
+        "https://youtu.be/_WCD3Z9UmJ4?si=i-Lf3h0x-SPe_Azo",
+        "https://youtu.be/7yW_uJOpxww?si=qwEjYfHKDeiTEhsH",
+        "https://youtu.be/urecgzR3P-0?si=qvG3cdinlZJKXzP5", # 60 + 2
     ]
     
     download_folder = 'audio_files'  # Specify the folder where files will be saved
