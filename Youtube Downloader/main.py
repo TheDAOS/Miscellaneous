@@ -1,4 +1,5 @@
-import youtube_dl # client to many multimedia portals
+# import youtube_dl # client to many multimedia portalss
+import yt_dlp as youtube_dl  # Replace youtube_dl with yt_dlp
 
 # downloads yt_url to the same directory from which the script runs
 def download_audio(yt_url):
