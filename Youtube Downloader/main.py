@@ -30,12 +30,21 @@ def main():
         "https://youtu.be/A66TYFdz8YA?si=uRq-vaLFf9ZqWmRM",
         "https://youtu.be/6mr4cYJ7yew?si=CWpisIMJ_aUfQW2d",
         "https://youtu.be/5Eqb_-j3FDA?si=kXCVaV3FTFqE01A1",
-
         "https://youtu.be/4tYktXxNspo?si=aNP2QVDbl-FrMcwO",
+
         "https://youtu.be/ofTxceS4wLI?si=KDI7DKx80ZAXC7H6",
         "https://youtu.be/9JDSGhhiOwI?si=EkXXCMO_59wuiUrq",
         "https://youtu.be/vr8RaNuWjWc?si=b366ediLX-l9ms3P",
+        "https://youtu.be/xitd9mEZIHk?si=4N3560NHk9ikko3G",
+        "https://youtu.be/xfMN4SpIxIA?si=r84iLuye7rI6Lgt2",
+        
+        "",
+        "",
+        "",
+        "",
+        "",
 
+        "",
         "",
         "",
         "",
