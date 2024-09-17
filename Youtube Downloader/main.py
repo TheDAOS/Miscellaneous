@@ -26,6 +26,7 @@ def download_audio(yt_url, download_folder):
 
 def main():
     yt_urls = [
+        # part 1
         # "https://youtu.be/fdubeMFwuGs?si=Tl5B2mAPWRilTGAv",
         # "https://youtu.be/A66TYFdz8YA?si=uRq-vaLFf9ZqWmRM",
         # "https://youtu.be/6mr4cYJ7yew?si=CWpisIMJ_aUfQW2d",
@@ -53,8 +54,30 @@ def main():
         # "https://youtu.be/ilNt2bikxDI?si=TltlZgfmT9531isg", # Don
         # "https://youtu.be/8olIVQpia3A?si=prIQPMzeOsnIBHvX", # Don
 
+        # part 2
+        "",
+        "",
+        "",
+        "",
+        "",
 
+        "",
+        "",
+        "",
+        "",
+        "",
 
+        "",
+        "",
+        "",
+        "",
+        "",
+
+        "",
+        "",
+        "",
+        "",
+        "",
     ]
     
     download_folder = 'audio_files'  # Specify the folder where files will be saved
