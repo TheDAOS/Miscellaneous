@@ -118,11 +118,11 @@ def main():
         "https://youtu.be/UuOQ6_MUax0?si=L7mPPH4jL7WWp0Rl",
         "https://youtu.be/UbMgcdmYC70?si=59CgMnkkThNv55ai",
 
-        "",
-        "",
-        "",
-        "",
-        "",
+        "https://youtu.be/ch8g-sJb6ow?si=IIxVQuaUUA1axePS",
+        "https://youtu.be/HZsRjrYW-lk?si=Pzlofq3Xu9akCOts",
+        "https://youtu.be/SA7AIQw-7Ms?si=yoRTk_kOCZIEp_bY",
+        "https://youtu.be/xRb8hxwN5zc?si=AjGksFE6lInmCC4E",
+        "https://youtu.be/6mr4cYJ7yew?si=kk-vgXbfGP2yueCF",
 
         "",
         "",
