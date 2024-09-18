@@ -156,11 +156,14 @@ def main():
         # "https://youtu.be/atVof3pjT-I?si=bJOVFI4rV6wP7ADW", # 100 + 2 - 4 (Dupicate)
 
         # "https://youtu.be/OinGHNpnGtc?si=fiR4NhjhywAjBN3d",
-        # "https://youtu.be/WpILgptU4iQ?si=wLcAA2eG5lb2nBU4", + 2
-
-        
-
-
+        # "https://youtu.be/WpILgptU4iQ?si=wLcAA2eG5lb2nBU4", # + 2
+        # "https://youtu.be/7dESZ5ufAt4?si=Xy9B8w_W6-3NKCVx",
+        # "https://youtu.be/p7_GDN6r2OY?si=eki68hMtuWoNwgAD",
+        # "https://youtu.be/tGXnuFu2LHU?si=n1ROh5BGQdT7t9gf",
+        # "https://youtu.be/5_eAAZ9CgHA?si=fLTAH2HCqLd9-KLF",
+        # "https://youtu.be/E_JsaSuK5C8?si=mqV9Yq5O2eZg0a4U",
+        # "https://youtu.be/O6dEVqj04E8?si=CA1WPqRModZpC0Sz", # + 6
+        # 100 + 10 - 4 (Dupicate)
     ]
     
     download_folder = 'audio_files'  # Specify the folder where files will be saved
