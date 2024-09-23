@@ -4,7 +4,15 @@ const context = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-canvas.addEventListener('click', handleDrawCircle);
+const handleDrawCircle = (event) => {
+    const x = event.pageX;
+    const y = event.pageY;
+  
+    const particle = new Particle(x, y);
+  };
+  
+  canvas.addEventListener('click', handleDrawCircle);
+  
 
 let x, y;
 
