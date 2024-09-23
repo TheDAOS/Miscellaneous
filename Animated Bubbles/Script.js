@@ -37,7 +37,13 @@ const animate = () => {
 animate();
 
 class Particle {
-    constructor(x = 0, y = 0) {}
+    constructor(x = 0, y = 0) {
+      this.x = x;
+      this.y = y;
+      this.radius = Math.random() * 50;
+      this.dx = Math.random() * 3;
+      this.dy = Math.random() * 7;
+    }
   
     draw() {
       // Drawing the particle as a colored circle
@@ -48,5 +54,5 @@ class Particle {
       // Implementing particle movement
       // ...
     }
-  }
+  }  
   
