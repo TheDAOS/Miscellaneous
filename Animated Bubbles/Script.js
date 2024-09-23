@@ -39,15 +39,31 @@ const drawCircle = (x, y) => {
 
 const animate = () => {
     context.clearRect(0, 0, canvas.width, canvas.height);
-
+  
     particleArray.forEach((particle) => {
-        particle?.move();
-        particle?.draw();
+      particle?.move();
+      particle?.draw();
     });
-
+  
     requestAnimationFrame(animate);
-};
+  };
+  
+  animate();
+  
+const gradient = context.createRadialGradient(
+this.x,
+this.y,
+1,
+this.x + 0.5,
+this.y + 0.5,
+this.radius
+);
 
+gradient.addColorStop(0.3, 'rgba(255, 255, 255, 0.3)');
+gradient.addColorStop(0.95, '#e7feff');
+
+context.fillStyle = gradient;
+  
 
 //Don't forget to call animate at the bottom 
 animate();
