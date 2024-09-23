@@ -35,3 +35,18 @@ const animate = () => {
 
 //Don't forget to call animate at the bottom 
 animate();
+
+class Particle {
+    constructor(x = 0, y = 0) {}
+  
+    draw() {
+      // Drawing the particle as a colored circle
+      // ...
+    }
+  
+    move() {
+      // Implementing particle movement
+      // ...
+    }
+  }
+  
