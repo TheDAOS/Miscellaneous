@@ -23,4 +23,13 @@ const drawCircle = (x, y) => {
     context.strokeStyle = 'white';
     context.stroke();
   };
-  
+
+//Define a speed by which to increment to the x and y coordinates
+
+const dx = Math.random() * 3;
+const dy = Math.random() * 7;
+
+//Incremenet the center of the circle with this speed
+x = x + dx;
+y = y - dy;
+
