@@ -43,16 +43,22 @@ class Particle {
       this.radius = Math.random() * 50;
       this.dx = Math.random() * 3;
       this.dy = Math.random() * 7;
+      this.color = 'white';
     }
   
     draw() {
-      // Drawing the particle as a colored circle
-      // ...
+      context.beginPath();
+      context.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+      context.strokeStyle = this.color;
+      context.stroke();
+  
+      context.fillStyle = this.color;
+      context.fill();
     }
   
     move() {
-      // Implementing particle movement
-      // ...
+        this.x = this.x + this.dx;
+        this.y = this.y - this.dy;
     }
   }  
   
