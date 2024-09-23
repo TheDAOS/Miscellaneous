@@ -1,96 +1,75 @@
-const canvas = document.getElementById('canvas');
-const context = canvas.getContext('2d');
+const canvas = document.getElementById("canvas");
+const context = canvas.getContext("2d");
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 const particleArray = [];
+class Particle {
+	constructor(x = 0, y = 0) {
+		this.x = x;
+		this.y = y;
+		this.radius = Math.random() * 50;
+		this.dx = Math.random() * 3;
+		this.dy = Math.random() * 7;
+		this.hue = 200;
+	}
+
+	//draw circle
+	draw() {
+		context.beginPath();
+		context.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+		context.strokeStyle = `hsl(${this.hue} 100% 50%)`;
+		context.stroke();
+
+		const gradient = context.createRadialGradient(
+			this.x,
+			this.y,
+			1,
+			this.x + 0.5,
+			this.y + 0.5,
+			this.radius
+		);
+
+		gradient.addColorStop(0.3, "rgba(255, 255, 255, 0.3)");
+		gradient.addColorStop(0.95, "#e7feff");
+
+		context.fillStyle = gradient;
+		context.fill();
+	}
+
+	// move circle
+	move() {
+		this.x = this.x + this.dx;
+		this.y = this.y - this.dy;
+	}
+}
 
 const handleDrawCircle = (event) => {
-    const x = event.pageX;
-    const y = event.pageY;
-  
-    for (let i = 0; i < 50; i++) {
-      const particle = new Particle(x, y);
-      particleArray.push(particle);
-    }
-  };
-  
-  canvas.addEventListener('click', handleDrawCircle);
-  
+	a = event.pageX;
+	b = event.pageY;
 
-let x, y;
-
-const move = () => {
-  const dx = Math.random() * 3;
-  const dy = Math.random() * 7;
-
-  x = x + dx;
-  y = y - dy;
+	for (let i = 0; i < 50; i++) {
+		const particle = new Particle(a, b);
+		particleArray.push(particle);
+	}
 };
 
-const drawCircle = (x, y) => {
-    context.beginPath();
-    context.arc(x, y, 50, 0, 2 * Math.PI);
-  
-    context.strokeStyle = 'white';
-    context.stroke();
-  };
-
 const animate = () => {
-    context.clearRect(0, 0, canvas.width, canvas.height);
-  
-    particleArray.forEach((particle) => {
-      particle?.move();
-      particle?.draw();
-    });
-  
-    requestAnimationFrame(animate);
-  };
-  
-  animate();
-  
-const gradient = context.createRadialGradient(
-this.x,
-this.y,
-1,
-this.x + 0.5,
-this.y + 0.5,
-this.radius
-);
+	context.clearRect(0, 0, canvas.width, canvas.height);
 
-gradient.addColorStop(0.3, 'rgba(255, 255, 255, 0.3)');
-gradient.addColorStop(0.95, '#e7feff');
+	particleArray.forEach((particle) => {
+		particle?.move();
+		particle?.draw();
+	});
 
-context.fillStyle = gradient;
-  
+	requestAnimationFrame(animate);
+};
 
-//Don't forget to call animate at the bottom 
 animate();
 
-class Particle {
-    constructor(x = 0, y = 0) {
-      this.x = x;
-      this.y = y;
-      this.radius = Math.random() * 50;
-      this.dx = Math.random() * 3;
-      this.dy = Math.random() * 7;
-      this.color = 'white';
-    }
-  
-    draw() {
-      context.beginPath();
-      context.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
-      context.strokeStyle = this.color;
-      context.stroke();
-  
-      context.fillStyle = this.color;
-      context.fill();
-    }
-  
-    move() {
-        this.x = this.x + this.dx;
-        this.y = this.y - this.dy;
-    }
-  }  
-  
+canvas.addEventListener("click", handleDrawCircle);
+canvas.addEventListener("resize", () => {
+	canvas.width = window.innerWidth;
+	canvas.height = window.innerHeight;
+});
