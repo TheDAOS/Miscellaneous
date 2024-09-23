@@ -24,3 +24,14 @@ const drawCircle = (x, y) => {
     context.stroke();
   };
 
+const animate = () => {
+    context.clearRect(0, 0, canvas.width, canvas.height);
+
+    move();
+        drawCircle(x,y);
+
+    requestAnimationFrame(animate);
+};
+
+//Don't forget to call animate at the bottom 
+animate();
