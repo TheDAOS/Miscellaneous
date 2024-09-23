@@ -7,14 +7,17 @@ canvas.height = window.innerHeight;
 const particleArray = [];
 
 const handleDrawCircle = (event) => {
-  const x = event.pageX;
-  const y = event.pageY;
-
-  const particle = new Particle(x, y);
-  particleArray.push(particle);
-};
-
-canvas.addEventListener('click', handleDrawCircle); 
+    const x = event.pageX;
+    const y = event.pageY;
+  
+    for (let i = 0; i < 50; i++) {
+      const particle = new Particle(x, y);
+      particleArray.push(particle);
+    }
+  };
+  
+  canvas.addEventListener('click', handleDrawCircle);
+  
 
 let x, y;
 
@@ -37,11 +40,14 @@ const drawCircle = (x, y) => {
 const animate = () => {
     context.clearRect(0, 0, canvas.width, canvas.height);
 
-    move();
-        drawCircle(x,y);
+    particleArray.forEach((particle) => {
+        particle?.move();
+        particle?.draw();
+    });
 
     requestAnimationFrame(animate);
 };
+
 
 //Don't forget to call animate at the bottom 
 animate();
