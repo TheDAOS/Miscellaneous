@@ -6,14 +6,14 @@ canvas.height = window.innerHeight;
 
 canvas.addEventListener('click', handleDrawCircle);
 
-//We are adding x and y here because we will need it later.
-let x, y
-const handleDrawCircle = (event) => {
-  x = event.pageX;
-  y = event.pageY;
+let x, y;
 
-  // Draw a bubble!
-  drawCircle(x, y);
+const move = () => {
+  const dx = Math.random() * 3;
+  const dy = Math.random() * 7;
+
+  x = x + dx;
+  y = y - dy;
 };
 
 const drawCircle = (x, y) => {
@@ -23,13 +23,4 @@ const drawCircle = (x, y) => {
     context.strokeStyle = 'white';
     context.stroke();
   };
-
-//Define a speed by which to increment to the x and y coordinates
-
-const dx = Math.random() * 3;
-const dy = Math.random() * 7;
-
-//Incremenet the center of the circle with this speed
-x = x + dx;
-y = y - dy;
 
