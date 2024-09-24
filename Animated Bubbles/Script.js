@@ -5,21 +5,21 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 const particleArray = [];
+
 class Particle {
 	constructor(x = 0, y = 0) {
 		this.x = x;
 		this.y = y;
-		this.radius = Math.random() * 50;
-		this.dx = Math.random() * 3;
-		this.dy = Math.random() * 7;
-		this.hue = 200;
+		this.radius = Math.random() * 20 + 5; // Adjusted for more reasonable sizes
+		this.dx = Math.random() * 3 - 1.5; // Random horizontal movement
+		this.dy = Math.random() * 5 + 1; // Random vertical movement
+		this.hue = Math.random() * 360; // Random hue for color variation
 	}
 
-	//draw circle
 	draw() {
 		context.beginPath();
 		context.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
-		context.strokeStyle = `hsl(${this.hue} 100% 50%)`;
+		context.strokeStyle = `hsl(${this.hue}, 100%, 50%)`;
 		context.stroke();
 
 		const gradient = context.createRadialGradient(
@@ -31,23 +31,30 @@ class Particle {
 			this.radius
 		);
 
-		gradient.addColorStop(0.3, "rgba(255, 255, 255, 0.3)");
-		gradient.addColorStop(0.95, "#e7feff");
+		gradient.addColorStop(0, "rgba(255, 255, 255, 0.3)");
+		gradient.addColorStop(1, "#e7feff");
 
 		context.fillStyle = gradient;
 		context.fill();
 	}
 
-	// move circle
 	move() {
-		this.x = this.x + this.dx;
-		this.y = this.y - this.dy;
+		this.x += this.dx;
+		this.y -= this.dy;
+
+		// Remove particle if it goes off-screen
+		if (this.y + this.radius < 0 || this.x + this.radius < 0 || this.x - this.radius > canvas.width) {
+			const index = particleArray.indexOf(this);
+			if (index > -1) {
+				particleArray.splice(index, 1);
+			}
+		}
 	}
 }
 
 const handleDrawCircle = (event) => {
-	a = event.pageX;
-	b = event.pageY;
+	const a = event.pageX;
+	const b = event.pageY;
 
 	for (let i = 0; i < 50; i++) {
 		const particle = new Particle(a, b);
@@ -59,17 +66,17 @@ const animate = () => {
 	context.clearRect(0, 0, canvas.width, canvas.height);
 
 	particleArray.forEach((particle) => {
-		particle?.move();
-		particle?.draw();
+		particle.move();
+		particle.draw();
 	});
 
 	requestAnimationFrame(animate);
 };
-
-animate();
 
 canvas.addEventListener("click", handleDrawCircle);
 canvas.addEventListener("resize", () => {
 	canvas.width = window.innerWidth;
 	canvas.height = window.innerHeight;
 });
+
+animate();
