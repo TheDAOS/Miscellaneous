@@ -25,8 +25,20 @@
         "https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css" /> 
 </head> 
 
-<body> 
-    
+<body>
+    <script>
+        // In body tag 
+        $('body').terminal({ 
+            iam: function (name) { 
+                this.echo('Hello, ' + name + 
+                    '. Welcome to GeeksForGeeks'); 
+            } 
+        }, { 
+            greetings: 'GeeksForGeeks - A place to'
+                    + ' learn DS, Algo and Computer'
+                    + ' Science for free'
+        });
+    </script>
 </body> 
 
 </html>
