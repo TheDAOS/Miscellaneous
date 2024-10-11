@@ -16,16 +16,17 @@
          |___|  |_______||___|  |_||_|   |_||___| |_|  |__||__| |__||_______|
        </template>
        <script>
-       $('body').terminal("service.py", {
-           greetings: greetings.innerHTML
-       });
-       term.echo(function() {
-        if (this.cols() > 100) { 
-           return bigText();
-        } else {
-           return smallerText();
-        }
-     });
+        $('body').terminal({
+            title: function(...args) {
+                const options = $.terminal.parse_options(args);
+                return fetch(options.url || 'https://terminal.jcubic.pl')
+                    .then(r => r.text())
+                    .then(html => html.match(/<title>([^>]+)<\/title>/)[1]);
+            }
+        }, {
+            checkArity: false,
+            greetings: 'My First JavaScript Terminal\n'
+        });
        </script>
 </body>
 </html>
