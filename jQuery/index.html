@@ -6,29 +6,19 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css"/>
 </head>
 <body>
-    <script>
-        $(function() {
-            function get_image(url) {
-                return new Promise(function(resolve, reject) {
-                    const img = $('<img src="' + url + '"/>');
-                    img.on('load', () => resolve(img));
-                    img.on('error', reject);
-                });
-            }
-            $('body').terminal({
-                cat: function(width, height) {
-                    return $('<img src="https://placekitten.com/' +
-                             width + '/' + height + '">');
-                },
-                title: function() {
-                    return fetch('https://terminal.jcubic.pl')
-                        .then(r => r.text())
-                        .then(html => html.match(/<title>([^>]+)<\/title>/)[1]);
-                }
-            }, {
-                greetings: 'My First JavaScript Terminal\n'
-            });
-        });
-    </script>
+    <template id="greetings">
+        _______  _______  ______    __   __  ___   __    _  _______  ___     
+       |       ||       ||    _ |  |  |_|  ||   | |  |  | ||   _   ||   |    
+       |_     _||    ___||   | ||  |       ||   | |   |_| ||  |_|  ||   |    
+         |   |  |   |___ |   |_||_ |       ||   | |       ||       ||   |    
+         |   |  |    ___||    __  ||       ||   | |  _    ||       ||   |___ 
+         |   |  |   |___ |   |  | || ||_|| ||   | | | |   ||   _   ||       |
+         |___|  |_______||___|  |_||_|   |_||___| |_|  |__||__| |__||_______|
+       </template>
+       <script>
+       $('body').terminal("service.py", {
+           greetings: greetings.innerHTML
+       });
+       </script>
 </body>
 </html>
