@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.terminal/js/jquery.terminal.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery.terminal/css/jquery.terminal.min.css"/>
+<style>
+    :root {
+       --size: 1.4;
+    }
+</style>
+</head>
+<body>
+    <template id="greetings">
+        _______  _______  ______    __   __  ___   __    _  _______  ___     
+       |       ||       ||    _ |  |  |_|  ||   | |  |  | ||   _   ||   |    
+       |_     _||    ___||   | ||  |       ||   | |   |_| ||  |_|  ||   |    
+         |   |  |   |___ |   |_||_ |       ||   | |       ||       ||   |    
+         |   |  |    ___||    __  ||       ||   | |  _    ||       ||   |___ 
+         |   |  |   |___ |   |  | || ||_|| ||   | | | |   ||   _   ||       |
+         |___|  |_______||___|  |_||_|   |_||___| |_|  |__||__| |__||_______|
+       </template>
+       <script>
+        $('body').terminal({
+            title: function(...args) {
+                const options = $.terminal.parse_options(args);
+                return fetch(options.url || 'https://terminal.jcubic.pl')
+                    .then(r => r.text())
+                    .then(html => html.match(/<title>([^>]+)<\/title>/)[1]);
+            }
+        }, {
+            checkArity: false,
+            completion: true,
+            greetings: 'My First JavaScript Terminal\n'
+        });
+       </script>
+</body>
+</html>
