@@ -19,6 +19,13 @@
        $('body').terminal("service.py", {
            greetings: greetings.innerHTML
        });
+       term.echo(function() {
+        if (this.cols() > 100) { 
+           return bigText();
+        } else {
+           return smallerText();
+        }
+     });
        </script>
 </body>
 </html>
