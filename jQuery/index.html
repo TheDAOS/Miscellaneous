@@ -17,9 +17,8 @@
        </template>
        <script>
         $('body').terminal({
-            title: function(...args) {
-                const options = $.terminal.parse_options(args);
-                return fetch(options.url || 'https://terminal.jcubic.pl')
+            title: function(url) {
+                return fetch(url || 'https://terminal.jcubic.pl')
                     .then(r => r.text())
                     .then(html => html.match(/<title>([^>]+)<\/title>/)[1]);
             }
