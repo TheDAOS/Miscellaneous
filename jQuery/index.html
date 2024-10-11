@@ -16,6 +16,8 @@
                 cat: function(width, height) {
                     const img = $('<img src="https://placekitten.com/' +
                                   width + '/' + height + '">');
+                    img.on('load', this.resume);
+                    this.pause();
                     this.echo(img);
                 }
             }, {
