@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spherical Screen Map</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Open+Sans|Maven+Pro:500);
+        A, A:link, A:visited, A:active {
+            text-decoration:none;
+            color:#b00b00;
+        }
+        body, html {
+            font-family:'Open Sans';
+            background: #000;
+            min-height: 100%;
+            font-size:10px;
+            font-family:'Open Sans';
+            background-attachment: fixed;
+            color: white;
+            font-size:10/1px;
+            font-family:monospace;
+        }
+        span#info{
+        position:fixed;
+        }
+        canvas#source{
+        display:none;
+        }
+        canvas#projection{
+        margin-top:5px;
+        display:block;
+        width:512px;
+        margin:0 auto;
+        }
+        input#ghost{
+        position: fixed;
+        width: 100%;
+        color: transparent;
+        background-color: transparent;
+        border: 0;
+        outline: none;
+        border:none;
+        }
+    </style>
+</head>
+<body>
+    <input type='text' id="ghost" /><span id="info">WOPR
+        by <a href='https://mightyuhu.github.io/'> Benedikt Wolters</a></span>
+      <canvas width="512" height="512" id="source"></canvas>
+      <canvas width="512" height="512" id="projection"></canvas>
+
+    <script>
+        window.requestAnimFrame = (function(){
+        return  window.requestAnimationFrame       ||
+                window.webkitRequestAnimationFrame ||
+                window.mozRequestAnimationFrame    ||
+                function( callback ){
+                    window.setTimeout(callback, 1000 / 60);
+                };
+        })();
+
+
+        // usage:
+        // instead of setInterval(render, 16) ....
+        var redraw = true;
+        
+
+        $("#ghost").focus();
+        (function($) {
+            $.fn.getCursorPosition = function() {
+                var input = this.get(0);
+                if (!input) return; // No (input) element found
+                if ('selectionStart' in input) {
+                    // Standard-compliant browsers
+                    return input.selectionStart;
+                } else if (document.selection) {
+                    // IE
+                    input.focus();
+                    var sel = document.selection.createRange();
+                    var selLen = document.selection.createRange().text.length;
+                    sel.moveStart('character', -input.value.length);
+                    return sel.text.length - selLen;
+                }
+            }
+        })(jQuery);
+
+        var strbadd= function(str,strb){
+            strb+=str;
+            for(i=0;i<41-(str.length % 41);i++){
+            strb += " "; 
+            }
+        if(strb.length > (25*41)){
+            strb = strb.slice(strb.length-(25*41), strb.length);
+        }
+        return strb;
+        }
+
+        var strb = "";
+        strb = strbadd(" ",strb);
+        strb = strbadd("GREETINGS PROFESSOR FALKEN",strb);
+        strb = strbadd(" ",strb);
+        strb = strbadd("SHALL WE PLAY A GAME?",strb);
+        strb = strbadd(" ",strb);
+        strb = strbadd("Game List",strb);
+        strb = strbadd(" ",strb);
+        strb = strbadd("FALKENS'S MAZE",strb);
+        strb = strbadd("CHESS",strb);
+        strb = strbadd("POKER",strb);
+        strb = strbadd("FIGHTER COMBAT",strb);
+        strb = strbadd("GUERILLA ENGAGEMENT",strb);
+        strb = strbadd("DESERT WARFARE",strb);
+        strb = strbadd("AIR-TO-GROUND ACTIONS",strb);
+        strb = strbadd("THEATERWIDE TACTICAL WARFARE",strb);
+        strb = strbadd("THEATERWIDE TACTICAL BIOTOXIC AND CHEMICAL WARFARE",strb);
+        strb = strbadd(" ",strb);
+        strb = strbadd("GLOBAL THERMONUCLEAR WAR",strb);
+        strbp = strb;
+        strbp = strbadd('▊',strb);
+        var lc = "";
+        textCheck = function(){
+        if(settings.stickfocus){
+            $("#ghost").focus();
+        }
+        if($("#ghost").getCursorPosition() != lc){
+            //strb = strbadd($("#ghost").val(),strb);
+            lc =$("#ghost").getCursorPosition();
+            strbp = strbadd($("#ghost").val().slice(0,lc)+'▊'+$("#ghost").val().slice(lc,$("#ghost").val().length),strb);
+                redraw = true;
+        }
+        };
+        $(window).on('keydown keyup',function(){
+        textCheck();
+        });
+        //sentinel = setInterval(textCheck,.2 )
+        $("#ghost").keyup(function (e) {
+            if (e.keyCode == 13) {
+            strb = strbadd($("#ghost").val(),strb);
+            strb = strbadd("Unknow Command: \""+$("#ghost").val()+"\"",strb);
+            strbp = strb;
+            strbp = strbadd($("#ghost").val().slice(0,lc)+'▊'+$("#ghost").val().slice(lc,$("#ghost").val().length),strb);
+                $("#ghost").val("");
+            redraw = true;
+                //draw();
+                //generateMapping();
+            }
+        });
+
+        var width = 512;
+        var height = 512;
+        var spherize = function (px, py) {
+            var x = px - width / 2;
+            var y = py - height / 2;
+            var r = Math.sqrt(x * x + y * y);
+            var maxr = width / settings.maxRadius;
+            if (r > maxr) return {
+                'x': px,
+                'y': py
+            }
+            var a = Math.atan2(y, x) * settings.atanscale;
+            var k = (r / maxr) * (r / maxr) * settings.k + 0.2;
+            var dx = Math.cos(a * settings.xscale) * r * k * settings.oxscale;
+            var dy = Math.sin(a * settings.yscale) * r * k * settings.oyscale;
+            return {
+                'x': dx + width / 2,
+                'y': dy + height / 2
+            }
+        }
+
+
+        var src = document.getElementById('source');
+        var dst = document.getElementById('projection');
+
+        var input = src.getContext('2d');
+        var output = dst.getContext('2d');
+        var draw = function(){
+        //input.fillStyle="#262737";
+        input.fillRect(0, 0, 512, 512);
+        input.font = '20px Monospace';
+        input.fillStyle = '#74F9FF';
+        input.shadowBlur = 30;
+        // Specify the shadow colour.
+        input.shadowColor = "blue";
+
+        // Specify the shadow offset.
+        input.shadowOffsetX = 0;
+        input.shadowOffsetY = 0;
+        for(i = 0;i<(25*41);i+=41){
+        console.log(strbp.slice(i,i+41))
+        input.fillText(strbp.slice(i,i+41), 10, ((i+41)/41) * 20);
+        }
+
+                        
+        input.shadowBlur = 0;
+        // Specify the shadow offset.
+        input.shadowOffsetX = 0;
+        input.shadowOffsetY = 0;
+        input.shadowColor = "black";
+        input.fillStyle = 'black';
+
+        for (var i = 2; i < width; i += 1.5) {
+
+            input.beginPath()
+            input.moveTo(i * 2, 2);
+            input.lineTo(i * 2, 512);
+            input.lineWidth = 0.8;
+            input.strokeStyle = 'hsl(0,0%,0%)';
+            input.stroke();
+
+            input.beginPath()
+            input.moveTo(2, i * 2);
+            input.lineTo(512, i * 2);
+            input.lineWidth = 0.8;
+            input.strokeStyle = 'hsl(0,0%,0%)';
+            input.stroke();
+
+        }
+
+
+        input.shadowBlur = 0;
+        // Specify the shadow offset.
+        input.shadowOffsetX = 0;
+        input.shadowOffsetY = 0;
+        }
+
+        draw();
+
+        generateMapping = function () {
+            output.fillRect(0, 0, 512, 512);
+            var bitmap = input.getImageData(0, 0, 512, 512);
+            var texture = input.getImageData(0, 0, 512, 512);
+            var map = [];
+
+            for (var y = 0; y < height; y++) {
+                for (var x = 0; x < width; x++) {
+                    var t = spherize(x, y);
+                    map[(x + y * height) * 2 + 0] = Math.max(Math.min(t.x, width ), 0);
+                    map[(x + y * height) * 2 + 1] = Math.max(Math.min(t.y, height ), 0);
+                }
+            }
+
+            var colorat = function (x, y, channel) {
+                return texture.data[(x + y * height) * 4 + channel];
+            }
+            for (var j = 0; j < height; j++) {
+                for (var i = 0; i < width; i++) {
+                    var u = map[(i + j * height) * 2];
+                    var v = map[(i + j * height) * 2 + 1];
+                    var x = Math.floor(u);
+                    var y = Math.floor(v);
+                    var kx = u - x;
+                    var ky = v - y;
+                    for (var c = 0; c < 4; c++) {
+                        bitmap.data[(i + j * height) * 4 + c] = (colorat(x, y, c) * (1 - kx) + colorat(x + 1, y, c) * kx) * (1 - ky) + (colorat(x, y + 1, c) * (1 - kx) + colorat(x + 1, y + 1, c) * kx) * (ky);
+                    }
+                }
+            }
+
+            output.putImageData(bitmap, 0, 0);
+        };
+
+        settings = {
+            maxRadius: 0.561,
+            k: 0.115,
+            atanscale: 1,
+            xscale: 1,
+            yscale: 1,
+            oxscale: 4.7,
+            oyscale: 4.7,
+            stickfocus: true,
+            applyMapping: function () {
+                generateMapping();
+            }
+        };
+
+        var gui = new dat.GUI();
+        gui.add(settings, 'maxRadius', 0.01, 1.51).onChange(function (value) {
+            generateMapping();
+        });
+
+        gui.add(settings, 'atanscale', 0.01, 10.0).onChange(function (value) {
+            generateMapping();
+        });
+        gui.add(settings, 'oxscale', 0.01, 10.0).onChange(function (value) {
+            generateMapping();
+        });
+        gui.add(settings, 'oyscale', 0.01, 10.0).onChange(function (value) {
+            generateMapping();
+        });
+        //gui.add(settings, 'xscale', 0.01, 10.0).onChange(function (value) {
+        //    generateMapping();
+        //});
+        //gui.add(settings, 'yscale', 0.01, 10.0).onChange(function (value) {
+        //    generateMapping();
+        //});
+        gui.add(settings, 'stickfocus');
+        gui.add(settings, 'k', 0.001, 2.010).onChange(function (value) {
+            generateMapping();
+        });
+        gui.add(settings, 'applyMapping');
+
+
+        (function animloop(){
+        requestAnimFrame(animloop);
+        if(redraw){
+            redraw = false;
+            draw();
+            generateMapping();
+        }
+        })();
+    </script>
+</body>
+</html>
