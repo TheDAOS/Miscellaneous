@@ -167,6 +167,9 @@ def main():
 
         # "https://www.youtube.com/watch?v=IKpkXzMxTq0",
         # "https://youtu.be/3q_ijl-aaTI?si=fyLEyk3BdDl-MM7g",
+
+        # fallout terminal keyboajrd
+        # 'https://youtu.be/d4TYCdWBgxs?si=_MoCCbUB49JUvrfT',
     ]
     
     download_folder = 'audio_files'  # Specify the folder where files will be saved
