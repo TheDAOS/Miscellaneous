@@ -26,8 +26,7 @@
             cursor: pointer;
             /* Add a pointer on hover */
         }
-    </style>
-    <style>
+
         #text {
             position: absolute;
             top: 50%;
@@ -38,14 +37,19 @@
             -ms-transform: translate(-50%, -50%);
         }
     </style>
-
-    <div id="overlay">
-        <div id="text">Overlay Text</div>
-    </div>
 </head>
 
 <body>
-    <div id="overlay"></div>
+
+    <div id="overlay" onclick="off()">
+        <div id="text">Overlay Text</div>
+    </div>
+
+    <div style="padding:20px">
+        <h2>Overlay with Text</h2>
+        <button onclick="on()">Turn on overlay effect</button>
+    </div>
+
     <script>
         function on() {
             document.getElementById("overlay").style.display = "block";
@@ -55,6 +59,7 @@
             document.getElementById("overlay").style.display = "none";
         }
     </script>
+
 </body>
 
 </html>
