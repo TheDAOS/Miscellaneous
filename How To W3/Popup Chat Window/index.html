@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-     {box-sizing: border-box;}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
 
 /* Button used to open the chat form - fixed at the bottom of the page */
 .open-button {
@@ -20,7 +21,7 @@
 }
 
 /* The popup chat - hidden by default */
-.form-popup {
+.chat-popup {
   display: none;
   position: fixed;
   bottom: 0;
@@ -53,7 +54,7 @@
   outline: none;
 }
 
-/* Set a style for the submit/login button */
+/* Set a style for the submit/send button */
 .form-container .btn {
   background-color: #04AA6D;
   color: white;
@@ -74,10 +75,17 @@
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
 }
-  </style>
+</style>
 </head>
 <body>
-   <div class="chat-popup" id="myForm">
+
+<h2>Popup Chat Window</h2>
+<p>Click on the button at the bottom of this page to open the chat form.</p>
+<p>Note that the button and the form is fixed - they will always be positioned to the bottom of the browser window.</p>
+
+<button class="open-button" onclick="openForm()">Chat</button>
+
+<div class="chat-popup" id="myForm">
   <form action="/action_page.php" class="form-container">
     <h1>Chat</h1>
 
@@ -88,14 +96,17 @@
     <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
   </form>
 </div>
-  <script>
-    function openForm() {
+
+<script>
+function openForm() {
   document.getElementById("myForm").style.display = "block";
 }
 
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }
-  </script
+</script>
+
 </body>
 </html>
+
